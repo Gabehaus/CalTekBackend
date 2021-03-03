@@ -1,0 +1,34 @@
+{
+  "name": "proshoptest",
+  "homepage": "http://calteksolutions.com/",
+  "version": "1.0.0",
+  "description": "Cal Tek Shopping Cart App",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "dev": "npm run server",
+    "data:import": "node seeder",
+    "data:destroy": "node seeder -d"
+  },
+  "author": "Gabriel Hauschildt",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "node": "^15.2.1",
+    "nodemailer": "^6.4.18"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
