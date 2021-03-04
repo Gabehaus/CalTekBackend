@@ -19,14 +19,11 @@ dotenv.config()
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(
-      `mongodb+srv://45654513:45654513@caltekshop1.yybaf.mongodb.net/CalTekShop?retryWrites=true&w=majority`,
-      {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-        useCreateIndex: true
-      }
-    )
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true
+    })
 
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
   } catch (error) {
@@ -55,9 +52,7 @@ app.use("/api/mail", mailRoute)
 app.use("/api/projects", projectRoutes)
 
 app.get("/api/config/paypal", (req, res) =>
-  res.send(
-    "AWh55FsCO7GuLc7htwym7o1MMzM4W8quZyEtAKZihunOyLB94PSuFAV_auGa797l1doCc27bYQMHGRnB"
-  )
+  res.send(process.env.PAYPAL_CLIENT_ID)
 )
 
 //Dummy test
