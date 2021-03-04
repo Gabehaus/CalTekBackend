@@ -4,7 +4,6 @@ import dotenv from "dotenv"
 import colors from "colors"
 import morgan from "morgan"
 import mongoose from "mongoose"
-var cors = require("cors")
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 //import connectDB from "./config/db.js"
 
@@ -16,8 +15,6 @@ import mailRoute from "./routes/mailRoute.js"
 import projectRoutes from "./routes/projectRoutes.js"
 
 dotenv.config()
-
-app.use(cors())
 
 const connectDB = async () => {
   try {
