@@ -7,9 +7,9 @@ import { v4 as uuidv4 } from "uuid"
 
 aws.config.update({
   bucketName: "caltekshopbucket1",
-  secretAccessKey: "Gu0A5F1vYi/2+DMM1nK9JFyCr7v2D35XmM5x96ae",
-  accessKeyId: "AKIAWLZFTWX3VMSNWAUC",
-  region: "us-west-2"
+  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+  accessKeyId: process.env.S3_ACCESS_KEY_ID,
+  region: process.env.S3_REGION
 })
 
 const s3 = new aws.S3()
