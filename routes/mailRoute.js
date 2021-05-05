@@ -39,8 +39,10 @@ router.post("/", (req, res) => {
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
       res.send(error)
+      console.log("error: ", error)
     } else {
       res.send("Success")
+      console.log("success")
     }
 
     smtpTransport.close()
