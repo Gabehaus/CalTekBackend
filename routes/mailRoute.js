@@ -6,23 +6,29 @@ router.post("/", (req, res) => {
   let data = req.body
 
   let smtpTransport = nodemailer.createTransport({
-    service: "Gmail",
+    // service: "Gmail",
+    host: "calteksolutions.com",
     port: 465,
+    // auth: {
+    //   type: "OAuth2",
+    //   user: "caltekmail2021@gmail.com",
+    //   pass: "45654513aB$%^",
+    //   clientId:
+    //     "708032881609-p0hqrgdittll65cjr1fectrflah01iiu.apps.googleusercontent.com",
+    //   clientSecret: "GI9EAXRfKV7KdlK_Lfu4v6kl",
+    //   refreshToken:
+    //     "1//04ONSvfVGOJOeCgYIARAAGAQSNwF-L9IrLqRHOMp3WqZA36BLeX7TvMYaY6WhUhylTfpZtMegZ04h8v0EyegxR5YeBq5h-RgmueE"
+    // }
+    secure: true,
     auth: {
-      type: "OAuth2",
-      user: "caltekmail2021@gmail.com",
-      pass: "45654513aB$%^",
-      clientId:
-        "708032881609-p0hqrgdittll65cjr1fectrflah01iiu.apps.googleusercontent.com",
-      clientSecret: "GI9EAXRfKV7KdlK_Lfu4v6kl",
-      refreshToken:
-        "1//04ONSvfVGOJOeCgYIARAAGAQSNwF-L9IrLqRHOMp3WqZA36BLeX7TvMYaY6WhUhylTfpZtMegZ04h8v0EyegxR5YeBq5h-RgmueE"
+      user: "https://www.calteksolutions.com:2096/ ",
+      pass: "fakepassword2"
     }
   })
 
   let mailOptions = {
     from: data.email,
-    to: "Gabehaus@gmail.com",
+    to: "contact@calteksolutions.com",
     subject: `Message from ${data.name}`,
     html: `
         <h3>Information</h3>
