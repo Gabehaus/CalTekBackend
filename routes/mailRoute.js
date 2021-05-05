@@ -8,7 +8,8 @@ router.post("/", (req, res) => {
   let smtpTransport = nodemailer.createTransport({
     // service: "Gmail",
     host: "https://mail.calteksolutions.com:2080",
-    port: 465,
+    port: 2080,
+    // port: 465,
     // auth: {
     //   type: "OAuth2",
     //   user: "caltekmail2021@gmail.com",
