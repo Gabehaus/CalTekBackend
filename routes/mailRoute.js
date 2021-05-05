@@ -7,7 +7,7 @@ router.post("/", (req, res) => {
 
   let smtpTransport = nodemailer.createTransport({
     // service: "Gmail",
-    host: "calteksolutions.com",
+    host: "https://mail.calteksolutions.com:2080",
     port: 465,
     // auth: {
     //   type: "OAuth2",
@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
     // }
     secure: true,
     auth: {
-      user: "https://www.calteksolutions.com:2096/ ",
+      user: "contact@calteksolutions.com",
       pass: "fakepassword2"
     }
   })
