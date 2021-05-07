@@ -32,8 +32,8 @@ const deliveryAutoReply = asyncHandler(async (req, res) => {
     subject: `Your order has been shipped from Caltek Solutions!`,
     html: `
         <h3>Products Shipped</h3>
-        ${orderItems.map(or => `Product: ` + or.name + `Quantity: ` + or.qty)}
-        
+        ${orderItems.map(or => or.name + ` Quantity: ` + or.qty + `<br>`)}
+
         <h3>Shipping Information</h3>
         <ul>
         <li>Recipient: ${address.recipient}</li>
