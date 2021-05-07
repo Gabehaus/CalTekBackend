@@ -34,7 +34,7 @@ const deliveryAutoReply = asyncHandler(async (req, res) => {
         <h3>Shipping Information</h3>
         <ul>
         <li>Recipient: ${address.recipient}</li>
-        <li>Shipping Address: ${address.address}, ${address.city} ${address.postalCode}, ${address.country}</li>
+        <li>Shipping Address: ${address.address}, ${address.city}, ${address.state} ${address.postalCode}, ${address.country}</li>
         <li>Shipped On: ${date}</li>
         </ul>
 
