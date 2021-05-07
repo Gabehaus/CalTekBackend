@@ -7,9 +7,9 @@ import nodemailer from "nodemailer"
 const deliveryAutoReply = asyncHandler(async (req, res) => {
   let { orderItems, name, address, date, email } = req.body
 
-  let orderHTML = orderItems.map(
-    or => `<li>Product: ${or.name}</li> ``<li>Quantity: ${or.qty}</li> `
-  )
+  //   let orderHTML = orderItems.map(
+  //     or => `<li>Product: ${or.name}</li> ``<li>Quantity: ${or.qty}</li> `
+  //   )
 
   let smtpTransport = nodemailer.createTransport({
     service: "Gmail",
@@ -31,9 +31,6 @@ const deliveryAutoReply = asyncHandler(async (req, res) => {
     to: email,
     subject: `Your order has been shipped from Caltek Solutions!`,
     html: `
-        <h3>You purchased</h3>
-        ${orderHTML}
-
         <h3>Shipping Information</h3>
         <ul>
         <li>Recipient: ${name}</li>
