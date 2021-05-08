@@ -33,7 +33,7 @@ const deliveryAutoReply = asyncHandler(async (req, res) => {
     html: `
         <h3>Products Shipped</h3>
         ${orderItems
-          .map(or => or.name + ` Quantity: ` + or.qty + `<br>`)
+          .map(or => or.name + `, Quantity: ` + or.qty + `<br>`)
           .join("")}
 
         <h3>Shipping Information</h3>
