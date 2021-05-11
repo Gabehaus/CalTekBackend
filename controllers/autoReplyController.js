@@ -5,7 +5,16 @@ import nodemailer from "nodemailer"
 // @route   POST /api/orders
 // @access  Private
 const deliveryAutoReply = asyncHandler(async (req, res) => {
-  let { orderItems, name, address, date, email } = req.body
+  let {
+    orderItems,
+    name,
+    address,
+    email,
+    shippedOn,
+    shipService,
+    arrivesIn,
+    trackingNumber
+  } = req.body
 
   //   let orderHTML = orderItems.map(
   //     or => `<li>Product: ${or.name}</li> ``<li>Quantity: ${or.qty}</li> `
@@ -42,7 +51,10 @@ const deliveryAutoReply = asyncHandler(async (req, res) => {
         <li>Shipping Address: ${address.address}, ${address.city}, ${
       address.state
     } ${address.postalCode}, ${address.country}</li>
-        <li>Shipped On: ${date}</li>
+        <li>Shipped On: ${shippedOn}</li>
+        <li>Shipping Service: ${shipService}</li>
+        <li>Tracking Number: ${trackingNumber}</li>
+        <li>Arrives In: ${arrivesIn}</li>
         </ul>
 
         <h3>Message</h3>
