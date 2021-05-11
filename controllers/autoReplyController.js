@@ -38,7 +38,7 @@ const deliveryAutoReply = asyncHandler(async (req, res) => {
   let mailOptions = {
     from: "caltekmail2021@gmail.com",
     to: email,
-    subject: `Your order has been shipped from Caltek Solutions!`,
+    subject: `Your order has been shipped from Cal Tek Solutions!`,
     html: `
         <h3>Products Shipped</h3>
         ${orderItems
@@ -58,7 +58,7 @@ const deliveryAutoReply = asyncHandler(async (req, res) => {
         </ul>
 
         <h3>Message</h3>
-        <p>Thank you for shopping with Caltek Solutions!</p>
+        <p>Thank you for shopping with Cal Tek Solutions!</p>
         `
   }
 
