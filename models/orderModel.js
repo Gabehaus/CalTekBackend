@@ -61,6 +61,10 @@ const orderSchema = mongoose.Schema(
     paidAt: {
       type: Date
     },
+    shippedOn: {
+      type: String,
+      required: false
+    },
     shipService: {
       type: String,
       required: false

@@ -118,7 +118,7 @@ const getOrders = asyncHandler(async (req, res) => {
 // @route   PUT /api/orders/:id/shipmentInfo
 // @access  Private/Admin
 const updateOrderWithShipmentInfo = asyncHandler(async (req, res) => {
-  const { arrivesIn, trackingNumber, shipService } = req.body
+  const { arrivesIn, trackingNumber, shipService, shippedOn } = req.body
 
   const order = await Order.findById(req.params.id)
 
@@ -126,6 +126,7 @@ const updateOrderWithShipmentInfo = asyncHandler(async (req, res) => {
     order.arrivesIn = arrivesIn
     order.trackingNumber = trackingNumber
     order.shipService = shipService
+    order.shippedOn = shippedOn
 
     const updatedOrder = await order.save()
 
